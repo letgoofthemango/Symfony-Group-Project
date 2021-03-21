@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  
+{{ include('navbar.html.twig') }}
+ <div class="container">
+
+    <h3 class="text-light">Order Form</h3>
+       
+        {{form_start(form)}}
+        {{form_start(form2)}}
+            {{form_widget(form2)}}
+            {{form_widget(form)}}
+            
+            <button class="btn btn-outline-light mb-3">{{ button_label|default('Submit') }}</button>
+        {{form_end(form2)}} 
+        {{form_end(form)}} 
+        
+
+       <a class="text-light pb-5" href="{{ path('indexAction') }}" style="font-size: 6vh;">Back to List</a>
+ </div>
+
+
+
+{% endblock %}

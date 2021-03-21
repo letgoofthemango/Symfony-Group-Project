@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container text-light">
+    <div class="">
+        <h2 class="page-header">Edit Event</h2>
+            <div class="">
+                {{form_start(form)}}
+                {{form_widget(form)}}
+                {{form_end(form)}}
+            </div>
+        <button type="button" class="btn btn-info"><a class="text-light" href="{{ path('indexAction') }}">Back to List</a></button>
+    </div>
+</div>
+
+
+{% endblock %}

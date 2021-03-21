@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div>
+    
+{{ include('navbar.html.twig') }}
+</div>
+<div class="container-fluid my-5">
+<div class="row mx-5" style="background-image: linear-gradient(to right, #000 -10%, transparent 80%), url('/asset/img/hero2.jpg'); background-position: center; background-size: cover;">
+    <div class="col-1"></div>
+    <div class="col-7 py-5 text-white">
+        <h2 class="mb-4">About us</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <a class="btn btn-outline-light btn-lg mt-4" href="/contact" role="button">Contact us</a>
+    </div>
+    <div class="col-4"></div>
+</div>
+</div>
+
+{{ include('footer.html.twig') }}
+{% endblock %}

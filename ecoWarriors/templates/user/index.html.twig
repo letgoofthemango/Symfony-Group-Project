@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+
+    {% include 'navbar.html.twig' %}
+
+    <div class="container">
+    <h1 class="text-light my-4">User index</h1>
+
+    <table class="table text-light">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th></th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td> 
+                {# <td>{{(user.roles == ['ROLE_USER']) ? 'user' : 'admin'}} </td> #}
+
+                <td>
+                    <a class="btn btn-outline-light" class="text-light" href="/user/change/{{ (user.roles == ['ROLE_USER']) ? 'admin' : 'user'}}&{{ user.id }}">Change</a>
+
+                    <a class="btn btn-outline-light" class="text-light" href="/user/change/ban&{{ user.id }}">Ban!</a>
+
+                    
+                </td>
+                
+                
+                <td>
+                    <a class="btn btn-outline-light" href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a class="btn btn-outline-light" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-light" href="{{ path('user_new') }}">Create new</a>
+
+    </div>
+{{ include('footer.html.twig') }}     
+{% endblock %}

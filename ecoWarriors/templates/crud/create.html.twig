@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ include('navbar.html.twig') }}
+ <div class="container text-light">
+       <h2 class="page-header text-light">Add Product</h2>
+        {{form_start(form)}}
+            {{form_widget(form)}}
+        {{form_end(form)}} 
+
+        <button type="button" class="btn btn-light bg-transparent"><a class="text-light" href="{{ path('indexAction') }}">Back to List</a></button>
+ </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+{{ include('navbar.html.twig') }}
+<div class="row" id="contact">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1117.9672330049589!2d16.35876997253926!3d48.206824420665825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0796dc1d7999%3A0x58426e04eeb0ee71!2sPalais%20Epstein!5e0!3m2!1sde!2sat!4v1607594758325!5m2!1sde!2sat"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-uppercase mt-3 font-weight-bold text-white">Contact form</h2>
+                <form action="">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control mt-2" placeholder="Name or organization*" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control mt-2" placeholder="Topic*" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control mt-2" placeholder="Email*" required>
+                            </div>
+                        </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control mt-2" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Please leave us a message.*" rows="3" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                        <label class="form-check-label text-white" for="invalidCheck2">Accept our terms of service</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12  text-center">
+                                <button class="btn btn-light" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-white">
+                        <h2 class="text-uppercase mt-4 font-weight-bold">Contact us directly</h2>
+                        <i class="fas fa-phone mt-3"></i><a href="tel:+"> (+43) 123456-789</a><br>
+                        <i class="fa fa-envelope mt-3"></i><a href=""> office@ecowarriors.at</a><br>
+                        <i class="fas fa-globe mt-3"></i> <a href="">Dr. Karl Renner-Ring 1, 1010 Wien</a><br>
+                        <div class="my-4 text-center">
+                            <a href=""><i class="fab fa-facebook fa-3x"></i></a>
+                            <a href=""><i class="fab fa-linkedin fa-3x"></i></a>
+                            <a href=""><i class="fab fa-instagram fa-3x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{ include('footer.html.twig') }}
+
+{% endblock %}

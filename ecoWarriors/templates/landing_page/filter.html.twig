@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{{ include('navbar.html.twig') }}
+
+{% for message in app.flashes('success') %}
+    {# <div class="alert alert-success"> #}
+        <script class="text-info bg-dark">alert("{{ message }}")</script>
+    {# </div> #}
+{% endfor %}
+
+
+<div class="container my-5 p-5 overflow-auto content rounded" style="height: 800px;">
+    <h1 class="text-center text-secondary">Products Available</h1>
+        <div class="row mt-3">
+        {% for product in  products %}
+            <div class="col-12 col-md-6 col-lg-4 p-3" >
+                <div class="products card ontop h-100 border-0" >
+                    <img src="/{{ product.img }}" class="card-img-top img-thumbnail p-2" alt="..." style="height:35vh; ">
+                    <div class="card-body">
+                    
+                        <ul class="text-secondary list-unstyled text-center" >
+                            <li>{{ product.productName }}</li>
+                            <li>{{ product.price}} Euros</li>
+                            <li>{{ product.description}}</li>
+                        </ul>
+                        
+
+                        
+                            <div class="text-center">
+                                <a href="/details/{{product.productId}}" class="btn btn-outline-info">description</a>
+                                <a href="/add/{{product.productId}}" class="btn btn-outline-danger">add to cart</a>
+                            </div>
+
+                    </div>
+                </div>
+            </div>        
+        {% endfor %}
+        </div>  
+</div>     
+{{ include('footer.html.twig') }}
+
+{% endblock %}

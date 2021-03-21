@@ -1,0 +1,82 @@
+
+<div class="container-fluid img-fluid pb-5 mb-4" style="background-image: url('/asset/img/hero.jpg'); height: 60vh; background-position: center; background-size: cover;">
+
+<nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand pr-5" href="/">Eco Warriors</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fa-2x text-dark"><span class="navbar-toggler-icon"></span></i>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-dark mx-5">
+                    <li class="nav-item px-3">
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a class="nav-link" href="/crud">Main</a>
+                            {# <a class="nav-link" href="{{ path('user_edit', {'id': app.user.id}) }}">Edit Profile</a> #}
+                        {% else %}
+                            <a class="nav-link" href="/">Main</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/aboutPage">About</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/cart">Shopping Cart</a>
+                    </li>
+
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/filter/fruit">Fruits</a>
+                            <a class="dropdown-item" href="/filter/vegetable">Vegetables</a>
+                            <a class="dropdown-item" href="/filter/cheese">Cheese</a>
+                            <a class="dropdown-item" href="/filter/bread">Bread</a>
+                            <a class="dropdown-item" href="/filter/basket">Basket</a>
+                        </div>    
+                    </li>
+
+                    <li class="nav-item px-3">
+                        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                            <a class="nav-link" href="/logout">Logout</a>
+                            {# <a class="nav-link" href="{{ path('user_edit', {'id': app.user.id}) }}">Edit Profile</a> #}
+                        {% else %}
+                            <a class="nav-link" href="/access">Login</a>
+                        {% endif %}
+                    </li>
+
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <li class="nav-item dropdown px-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/crud/create">Add Products</a>
+                                <a class="dropdown-item" href="/user">Edit Users</a>
+                            </div>    
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted("ROLE_USER") %}
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/edityourself">Profile</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+</div>
+    </nav>
+    
+    <div class="mt-5">
+        <h1 class="text-center headline d-none d-lg-block">An easy way to get your food locally and fresh..</h1>
+    </div>
+</div>
+
+
+
+
+
+

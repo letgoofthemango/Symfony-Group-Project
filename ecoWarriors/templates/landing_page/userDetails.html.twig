@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Product Details{% endblock %}
+
+
+{% block body %}
+{{ include('navbar.html.twig') }}
+
+
+
+<div class="container-fluid">
+    <div class="card bg-dark text-secondary content">
+        <div class="row">
+            <div class="col-5">
+                <img src="/{{ product.img }}" class="img-fluid p-5"  alt="...">
+            </div>
+            <div class="card-body col-7 text-center">
+                <h3 class="card-title pt-5">{{ product.productname }}</h3>
+                    {{ product.price }} € <br>
+                    Produced by {{product.producer.producerName}} <br>
+                    Visit Producer: <a href=" {{product.producer.website}} ">{{product.producer.website}}</a> <br>
+                    Producer Address: {{product.producer.address.street}} {{product.producer.address.number}}, {{product.producer.address.zipcode}} {{product.producer.address.city}}, {{product.producer.address.country}}<br>
+                    {{ product.description}}<br>
+               
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                    <a href="/add/{{ product.productId }}" class="btn btn-outline-secondary">add to cart</a>
+                           
+                                {% else %}
+                                    <a href="/access" class="btn btn-outline-secondary">add to cart</a>
+                                {% endif %}
+                <a href="/" class="btn btn-outline-info">Return to Main Page</a>
+                 
+            </div>    
+        </div>
+    </div> 
+</div> 
+{% endblock %}

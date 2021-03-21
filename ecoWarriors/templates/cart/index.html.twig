@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{{ include('navbar.html.twig') }}
+
+{% for message in app.flashes('success') %}
+    {# <div class="alert alert-success"> #}
+        <script class="text-info bg-dark">alert("{{ message }}")</script>
+    {# </div> #}
+{% endfor %}
+
+
+
+<div class="container my-5 p-5 overflow-auto content rounded" style="height: 800px;">
+    <h1 class="text-center text-secondary">Shopping Cart</h1>
+     
+    <table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col"></th>
+      <th scope="col">Product</th>
+      <th scope="col">Description</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</>
+   </tr>
+  </thead>
+  <tbody>
+  {% set myArray = [] %}
+  {% for product in  cart %}
+    <tr>
+      
+      <td><img src="/{{ product.fkProduct.img }}" class="img-thumbnail p-2" alt="..." style="height:10vh; width:7vw; "></td>
+      <td>{{ product.fkProduct.productName }}</td>
+      <td>{{ product.fkProduct.description}}</td>
+      <td><a href="/remove/{{ product.cartId }}">-</a> {{ product.qty }} <a href="/plus/{{ product.cartId }}">+</a></td>
+      <td>{{ product.fkProduct.price}} Euros</td>
+      <td><a href="/deleteFromCart/{{ product.cartId }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+      </svg></a></td>
+      {% set myArray = myArray|merge([product.fkProduct.price * product.qty]) %}
+    </tr>
+ {% endfor %}
+    <tr> 
+        <td>{% set sum = 0 %}</td>
+        <td></td>   
+        <td></td>
+        <td>Total</td>
+        <td>{% for r in myArray %}
+          {% set sum = sum + r %}
+        {% endfor %}{{ sum }} Euros</td>
+
+     
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-end">
+<a href="/cart/order" class="btn btn-outline-secondary">checkout</a>
+</div>
+</div>  
+   
+{{ include('footer.html.twig') }}
+
+{% endblock %}

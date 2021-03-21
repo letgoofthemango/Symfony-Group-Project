@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Oxygen:wght@300&family=Simonetta:ital,wght@1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <style>
+        h1, h2, a  {
+            font-family: 'Caveat', cursive;
+        }
+        h3, h4, h5 {
+            font-family: 'Simonetta', cursive;
+        }
+        p, li {
+            font-family: 'Oxygen', sans-serif;
+        }
+        .content {
+            
+            background-color: rgb(240, 239, 235)!important;
+        }
+        .fa {
+            color: rgb(240, 206, 217);
+            
+        }  
+        nav a{
+            font-size: 3vh;
+            color: black !important;
+           
+        }
+
+        nav a:hover {
+            color: white !important;
+        }
+        .navbar-brand{
+            font-size: 6vh;
+        }
+
+        body{
+            background-color: rgb(70,81,90);
+        }
+
+        .headline{
+            font-size: 10vh;
+        }
+
+        .products{
+            background-color: rgb(240, 239, 235);
+        }
+
+        .information{
+            background-color: rgb(203, 223, 189)!important;
+            
+        }
+
+        svg, a {
+            color: gray;
+        }
+
+        a:hover{
+            color:white;
+        }
+
+        #contact {
+            
+            letter-spacing: 2px;
+        }
+        #contact a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Oxygen', sans-serif
+        }
+
+
+        @media (max-width: 575px) {
+            #contact {
+                padding-bottom: 800px;
+            }
+            #contact .maps iframe {
+                width: 100%;
+                height: 450px;
+            }
+        }
+        @media (min-width: 576px) {
+            #contact {
+                padding-bottom: 800px;
+            }
+            #contact .maps iframe {
+                width: 100%;
+                height: 450px;
+            }
+        }
+        @media (min-width: 768px) {
+            #contact {
+                padding-bottom: 350px;
+            }
+            #contact .maps iframe {
+                width: 100%;
+                height: 850px;
+            }
+        }
+        @media (min-width: 992px) {
+            #contact {
+                padding-bottom: 200px;
+            }
+            #contact .maps iframe {
+                width: 100%;
+                height: 700px;
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    
+    {% block javascripts %}{% endblock %} 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    </body>
+</html>

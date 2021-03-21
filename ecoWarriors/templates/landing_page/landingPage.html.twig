@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center py-5 mx-0 text-center" style="background-image: url('asset/img/hero.jpg'); background-position: center; background-size: cover;">
+        <div class="jumbotron" style="width:75%; background-color:rgb(255,255,255,0.5)">
+            <h1 class="display-4 mb-4 text-dark">Welcome to our shop!</h1>
+            <p class="lead text-dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <hr class="my-4">
+            <p class="text-dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+
+            <a class="btn btn-outline-dark btn-lg mt-4" href="/login" role="button">Log In</a>
+
+            <p class="my-2 text-dark">Don't have an account?</p>
+            <p class="my-2 text-dark">Please register here</p>
+            
+            <a class="btn btn-outline-dark btn-lg" href="/register" role="button">Register</a>
+        </div>
+    </div>
+{% endblock %}
