@@ -1,1 +1,1 @@
-# symfonyExample
+Fullstack course group project.
